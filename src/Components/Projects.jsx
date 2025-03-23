@@ -58,7 +58,7 @@ export default function Projects({ containerRef }) {
   }, [containerRef]);
 
   return (
-    <div id="projects" className="text-white p-5 mt-10">
+    <div id="projects" className="text-white p-5 mt-10 pt-36 -mt-36">
       <h1 className="text-[#007cf0]">Projects</h1>
       <h2 className="text-[#007cf0] text-5xl font-bold mb-6">My Projects</h2>
       
