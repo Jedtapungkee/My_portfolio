@@ -1,6 +1,6 @@
 import React from "react";
 import SplitText from "./SplitText/SplitText.jsx";
-import BlurText from "./BlurText/Blurtext.jsx";
+import BlurText from "./BlurText/BlurText.jsx";
 
 function About() {
   return (
