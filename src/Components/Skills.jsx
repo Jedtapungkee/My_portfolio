@@ -5,7 +5,7 @@ export default function Skills() {
   return (
     <div id='skills' className="text-white p-5 pt-36 -mt-36">
       <h1 className="text-[#007cf0]">Skills</h1>
-      <h2 className="text-[#007cf0] text-7xl font-bold mb-4 transition-all duration-500 ease-in-out transform hover:scale-105">
+      <h2 className="text-[#007cf0] text-7xl font-bold mb-4 ">
         My Skills
       </h2>
       
