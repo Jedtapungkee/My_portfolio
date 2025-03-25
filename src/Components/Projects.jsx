@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useRef} from "react";
 
 const projects = [
   {
@@ -39,33 +39,32 @@ const projects = [
   },
 ];
 
-export default function Projects({ containerRef }) {
-  useEffect(() => {
-    if (!containerRef.current) return;
+export default function Projects() {
+  const projectsContainerRef = useRef(null);  // ใช้ useRef เพื่อเก็บการอ้างอิง
 
-    const el = containerRef.current;
+  useEffect(() => {
+    const el = projectsContainerRef.current;
 
     // ใช้ wheel event เพื่อเลื่อนแนวนอนแทนเลื่อนแนวตั้ง
     const handleWheel = (e) => {
       if (e.deltaY !== 0) {
-        e.preventDefault();
-        el.scrollLeft += e.deltaY * 3;
+        e.preventDefault();  // ป้องกันการเลื่อนในแนวตั้ง
+        el.scrollLeft += e.deltaY * 3;  // เพิ่มความเร็วในการเลื่อนแนวนอน
       }
     };
 
     el.addEventListener("wheel", handleWheel, { passive: false });
-    return () => el.removeEventListener("wheel", handleWheel);
-  }, [containerRef]);
+    return () => el.removeEventListener("wheel", handleWheel);  // ลบ event listener เมื่อคอมโพเนนต์ถูกทำลาย
+  }, []);
 
   return (
-    <div id="projects" className="text-white p-5 mt-10 pt-36 -mt-36">
+    <div id="projects" className="text-white p-5 pt-36 -mt-36">
       <h1 className="text-[#007cf0]">Projects</h1>
-      <h2 className="text-[#007cf0] text-5xl font-bold mb-6">My Projects</h2>
-      
+      <h2 className="text-[#007cf0] text-4xl md:text-5xl font-bold mb-6">My Projects</h2>
+
       <div className="relative w-full">
-        {/* ใช้ containerRef เป็น div ที่ overflow-x-auto */}
         <div
-          ref={containerRef}
+          ref={projectsContainerRef}  // ผูก ref ไปที่ div นี้
           className="flex gap-6 overflow-x-auto w-full p-2 scroll-smooth custom-scrollbar"
         >
           {Array.isArray(projects) &&

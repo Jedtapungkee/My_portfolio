@@ -9,21 +9,21 @@ function Hero() {
   return (
     <section
       id="home"
-      className="flex flex-row  justify-center items-center min-h-screen px-5  overflow-hidden"
+      className="relative flex flex-col md:flex-row justify-center items-center min-h-screen px-5"
     >
       {/* Left Content */}
-      <div className="text-left md:w-1/2 ">
+      <div className="text-left md:w-1/2">
         <motion.div
-          className="text-xl text-[#007cf0] overflow-hidden"
+          className=" text-[12px] md:text-xl text-[#007cf0]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Hi, my name is
+          Hi my name is
         </motion.div>
         <SplitText
           text="Jedtapungkee Claikhem"
-          className="text-5xl font-bold text-white "
+          className="text-3xl md:text-5xl font-bold text-white"
           delay={100}
           animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
           animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
@@ -31,8 +31,7 @@ function Hero() {
           threshold={0.2}
           rootMargin="-50px"
         />
-
-        <p className="text-gray-400 text-2xl mb-5 mt-5 overflow-hidden">
+        <p className="text-gray-400 md:text-2xl mb-5 mt-5 overflow-hidden">
           <Typewriter
             words={["Frontend Development", "Web Development"]}
             loop={true}
@@ -43,13 +42,14 @@ function Hero() {
             delaySpeed={2000}
           />
         </p>
+        <div className="flex flex-col items-left  w-36">
         <a
           href="https://github.com/Jedtapungkee"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white transition-colors overflow-hidden"
+          className="inline-flex w-6 h-6 text-gray-500 hover:text-white transition-colors"
         >
-          <FaGithub className="text-2xl text-gray-400 " />
+          <FaGithub className="text-2xl text-gray-400" />
         </a>
         <button
           onClick={() => {
@@ -60,14 +60,22 @@ function Hero() {
               console.error("❌ Section #projects not found!");
             }
           }}
-          className="relative w-36 text-center font-bold px-3 py-3 mt-5 bg-black text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer"
+          className="relative md:w-36 text-center font-bold px-3 py-3 mt-5 bg-black text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer"
         >
           <span className="absolute inset-0 bg-blue-700 scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
           <span className="relative">View Projects</span>
         </button>
+        </div>
       </div>
-      <div className="md:w-1/2 flex justify-center items-center">
+
+      {/* Lanyard สำหรับ Desktop */}
+      <div className="hidden md:flex md:w-1/2 justify-center items-center">
         <Lanyard position={[5, 2, 15]} gravity={[0, -30, 0]} />
+      </div>
+
+      {/* Lanyard สำหรับ Mobile */}
+      <div className="md:hidden absolute right-0 top-1/2 transform -translate-y-1/2">
+        <Lanyard position={[0, 0, 30]} gravity={[0, -30, 0]} />
       </div>
     </section>
   );

@@ -5,13 +5,13 @@ export default function Contact() {
     <div id="contact" className="text-white p-5  pt-36 -mt-36">
         <h1 className="text-[#007cf0]">Contact</h1>
       <h2 className="text-[#007cf0] text-5xl font-bold mb-6">Contact Me</h2>
-      <p className="text-gray-300 mb-6 text-2xl">
+      <p className="text-gray-300 mb-6 text-xl md:text-2xl">
         would like to work together, please feel free to contact me.
       </p>
 
       {/* ฟอร์มตัวอย่าง (ส่งผ่าน formsubmit.co หรือจะเปลี่ยนเป็น EmailJS ก็ได้) */}
       <form
-        action="https://formsubmit.co/Jedtapungkee.c@ku.th" // <--- ใส่อีเมลที่คุณต้องการรับข้อความ
+        action="https://formsubmit.co/Jedtapungkee.c@ku.th" 
         method="POST"
         className="max-w-md mx-auto space-y-4"
       >
