@@ -5,11 +5,7 @@ export default function Skills() {
   return (
     <div id='skills' className="text-white p-5 pt-36 -mt-36">
       <h1 className="text-[#007cf0]">Skills</h1>
-<<<<<<< HEAD:src/Components/skills.jsx
       <h2 className="text-[#007cf0] text-5xl md:text-7xl font-bold mb-4 transition-all duration-500 ease-in-out">
-=======
-      <h2 className="text-[#007cf0] text-7xl font-bold mb-4 ">
->>>>>>> d9aeb25ea29a48c95f3f9f0db9735c3dcb0ec0d6:src/Components/Skills.jsx
         My Skills
       </h2>
       
