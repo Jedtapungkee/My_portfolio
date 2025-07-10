@@ -5,6 +5,7 @@ import Lanyard from "./Lanyard.jsx";
 import SplitText from "./SplitText/SplitText.jsx";
 import { FaGithub } from "react-icons/fa";
 
+
 function Hero() {
   return (
     <section
@@ -42,29 +43,39 @@ function Hero() {
             delaySpeed={2000}
           />
         </p>
-        <div className="flex flex-col items-left  w-36">
-        <a
-          href="https://github.com/Jedtapungkee"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex w-6 h-6 text-gray-500 hover:text-white transition-colors"
-        >
-          <FaGithub className="text-2xl text-gray-400" />
-        </a>
-        <button
-          onClick={() => {
-            const el = document.getElementById("projects");
-            if (el) {
-              el.scrollIntoView({ behavior: "smooth" });
-            } else {
-              console.error("❌ Section #projects not found!");
-            }
-          }}
-          className="relative md:w-36 text-center font-bold px-3 py-3 mt-5 bg-black text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer"
-        >
-          <span className="absolute inset-0 bg-blue-700 scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
-          <span className="relative">View Projects</span>
-        </button>
+        <div className="flex flex-col items-left  w-full">
+          <a
+            href="https://github.com/Jedtapungkee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-6 h-6 text-gray-500 hover:text-white transition-colors"
+          >
+            <FaGithub className="text-2xl text-gray-400" />
+          </a>
+          <div className="md:flex items-center mt-2 gap-4">
+            <button
+              onClick={() => {
+                const el = document.getElementById("projects");
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  console.error("❌ Section #projects not found!");
+                }
+              }}
+              className="relative md:w-36 text-center font-bold px-3 py-3 mt-5 bg-black text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer"
+            >
+              <span className="absolute inset-0 bg-blue-700 scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
+              <span className="relative">View Projects</span>
+            </button>
+
+            <a
+              href="/Resume.pdf"
+              download
+              className="relative  text-center font-bold px-3 py-3 mt-5 bg-blue-600 text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer transition-colors duration-500 ease-out hover:bg-black hover:text-blue-600"
+            >
+              <span className="relative">My Resume</span>
+            </a>
+          </div>
         </div>
       </div>
 
