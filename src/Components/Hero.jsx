@@ -43,7 +43,7 @@ function Hero() {
             delaySpeed={2000}
           />
         </p>
-        <div className="flex flex-col items-left  w-full">
+        <div className="flex flex-col items-left w-100 md:w-full ">
           <a
             href="https://github.com/Jedtapungkee"
             target="_blank"
@@ -51,8 +51,8 @@ function Hero() {
             className="inline-flex w-6 h-6 text-gray-500 hover:text-white transition-colors"
           >
             <FaGithub className="text-2xl text-gray-400" />
-          </a>
-          <div className="md:flex items-center mt-2 gap-4">
+          </a> 
+          <div className=" flex flex-col md:flex-row mt-2 gap-2 ">
             <button
               onClick={() => {
                 const el = document.getElementById("projects");
@@ -62,7 +62,7 @@ function Hero() {
                   console.error("❌ Section #projects not found!");
                 }
               }}
-              className="relative md:w-36 text-center font-bold px-3 py-3 mt-5 bg-black text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer"
+              className="relative text-center font-bold px-3 py-3 w-36 mt-5 bg-black text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer"
             >
               <span className="absolute inset-0 bg-blue-700 scale-x-0 origin-right group-hover:scale-x-100 transition-transform duration-500 ease-out"></span>
               <span className="relative">View Projects</span>
@@ -71,7 +71,7 @@ function Hero() {
             <a
               href="/Resume.pdf"
               download
-              className="relative  text-center font-bold px-3 py-3 mt-5 bg-blue-600 text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer transition-colors duration-500 ease-out hover:bg-black hover:text-blue-600"
+              className="relative w-36 text-center font-bold px-3 py-3 md:mt-5 mt-2 bg-blue-600 text-white border-2 border-blue-600 rounded-md overflow-hidden group cursor-pointer transition-colors duration-500 ease-out hover:bg-black hover:text-blue-600"
             >
               <span className="relative">My Resume</span>
             </a>
